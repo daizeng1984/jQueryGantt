@@ -1,12 +1,27 @@
 {
-  "name": "electron-quick-start",
+  "name": "jQueryGantt",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "jQuery Gantt editor",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "CSC_IDENTITY_AUTO_DISCOVERY=false && electron-builder --dir",
+    "dist": "CSC_IDENTITY_AUTO_DISCOVERY=false && electron-builder"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "build": {
+    "appId": "com.electron.jquerygantt.modified",
+    "mac": {
+      "category": "your.app.category.type"
+    },
+    "linux": {
+      "target": "rpm",
+      "category": "your.app.category.type"
+    },
+    "win": {
+      "target": "portable"
+    }
+  },
+  "repository": "https://github.com/robicch/jQueryGantt.git",
   "keywords": [
     "Electron",
     "quick",
@@ -15,12 +30,13 @@
     "demo"
   ],
   "author": "GitHub",
-  "license": "CC0-1.0",
+  "license": "MIT",
   "devDependencies": {
-    "electron": "^3.0.4"
+    "electron": "3.0.4",
+    "electron-builder": "^20.31.2"
   },
   "dependencies": {
-    "jquery": "^3.1.1",
-    "jquery-ui-dist": "^1.12.1"
+    "jquery": "3.1.1",
+    "jquery-ui-dist": "1.12.1"
   }
 }
